@@ -1,0 +1,16 @@
+
+<h3>Paises</h3>
+
+<ul>
+ {% for p in paises %}
+
+  <li>
+    {{p}}
+  </li>
+
+{% endfor %} 
+</ul>
+
+<br />
+[<a href="{% url 'crear_pais' %}">agregar pais</a>]
+

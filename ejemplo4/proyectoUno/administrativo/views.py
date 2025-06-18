@@ -89,3 +89,19 @@ def eliminar_estudiante(request, id):
     estudiante = Estudiante.objects.get(pk=id)
     estudiante.delete()
     return redirect(index)
+
+def listar_paises(request):
+    paises = Pais.objects.all()
+    informacion_template = {'paises': paises}
+    return render(request, 'listar_paises.html', informacion_template)
+
+def crear_pais(request):
+    if request.method=='POST':
+        formulario = PaisForm(request.POST)
+        if formulario.is_valid():
+            formulario.save()
+            return redirect(listar_paises)
+    else:
+        formulario = PaisForm()
+    diccionario = {'formulario': formulario}
+    return render(request, 'crearPais.html', diccionario)

@@ -6,7 +6,13 @@ class Pais(models.Model):
     # capital
     # número de provincias
     # número de habitantes
-    pass
+    nombre = models.CharField(max_length=50)
+    capital = models.CharField(max_length=50)
+    numero_de_provincias = models.IntegerField()
+    numero_habitantes = models.IntegerField()
+
+    def __str__(self):
+        return "%s %s %d %d" % (self.nombre, self.capital, self.numero_de_provincias, self.numero_habitantes) 
 
 
 class Estudiante(models.Model):
