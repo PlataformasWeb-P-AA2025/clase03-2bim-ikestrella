@@ -6,7 +6,7 @@ from administrativo.models import Matricula
 class MatriculaForm(ModelForm):
     class Meta:
         model = Matricula
-        fields = ['estudiante', 'modulo', 'comentario']
+        fields = ['estudiante', 'modulo', 'comentario', 'costo']
 
 
 
@@ -21,7 +21,7 @@ class MatriculaEditForm(ModelForm):
 
     class Meta:
         model = Matricula
-        fields = ['estudiante', 'modulo', 'comentario']
+        fields = ['estudiante', 'modulo', 'comentario', 'costo']
         widgets = {
             'comentario': forms.Textarea(attrs={
                 'rows': 4,

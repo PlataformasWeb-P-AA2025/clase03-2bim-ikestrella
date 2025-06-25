@@ -31,3 +31,43 @@
   {% endfor %}
 
 </table>
+
+
+<table border="1px">
+  <tr>
+    <th><b>Estudiante</b></th>
+    <th><b>Apellido</b></th>
+    <th><b>Tipo</b></th>
+    <th><b>Edad</b></th>
+    <th><b>Matriculas</b></th>
+  </tr>
+  {% for e in estudiantes %}
+  <tr>
+    <td>
+      {{e.nombre}}
+    </td>
+    <td>
+      {{e.apellido}}
+    </td>
+    <td>
+      {{e.tipo_estudiante}}
+    </td>
+    <td>
+      {{e.edad}}
+    </td>
+    <td>
+      {% for m in e.obtener_matriculas %}
+        <br>
+        Modulo: {{m.modulo.nombre}}
+        <br>
+        Costo: {{m.costo}}
+        <br>
+        
+      {% endfor %}
+
+      <br>
+      Costo Total: {{e.obtener_costo_total}}
+    </td>
+  </tr>
+  {% endfor %}
+</table>
